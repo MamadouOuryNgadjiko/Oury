@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+  line-height: 1.6;
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e293b;
+  padding: 15px 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.navbar ul {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar ul li a {
+  color: #e5e7eb;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #38bdf8;
+}
+
+
+.hero {
+  text-align: center;
+  padding: 150px 20px 100px 20px;
+  background: linear-gradient(135deg, #1e3a8a, #0f172a);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background: #38bdf8;
+  color: #000;
+  border-radius: 8px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #22c55e;
+}
+
+
+section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #38bdf8;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+
+.about ul li {
+  background: #1e293b;
+  margin-bottom: 10px;
+  padding: 12px 15px;
+  border-radius: 8px;
+
+  font-size: 1rem;
+}
+
+.project-card, .certificate-card {
+
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover, .certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.project-card h3, .certificate-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.project-card p, .certificate-card p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+
+.skills-list li {
+  background: #1e293b;
+  margin-bottom: 10px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+
+.contact p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #020617;
+  font-size: 1rem;
+  margin-top: 50px;
+}
+.hero-photo {
+  width: 150px;       
+  height: 150px;      /* hauteur */
+  border-radius: 50%; /* image ronde */
+  object-fit: cover;  /* ajuste l'image sans déformation */
+  margin-bottom: 20px;
+  border: 3px solid #fff; /* contour blanc optionnel */
+}
+/* ======== MENU HAMBURGER ======== */
+
+/* Bouton hamburger caché sur grand écran */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #e5e7eb;
+  cursor: pointer;
+}
+
+/* Sur mobile */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between; /* espace entre logo et bouton */
+  }
+
+  .navbar ul {
+    display: none; /* caché par défaut */
+    flex-direction: column;
+    gap: 15px;
+    background: #1e293b;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 220px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .navbar ul.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .menu-toggle {
+    display: block; /* visible sur mobile */
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  section {
+    padding: 50px 15px;
+  }
+}
